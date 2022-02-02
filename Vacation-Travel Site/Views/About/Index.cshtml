@@ -1,0 +1,25 @@
+﻿@using Vacation_Travel_Site.Models.Classes
+@model List<About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<!DOCTYPE HTML>
+<html>
+<body>
+    <div class="content">
+        <div class="wrap">
+            <div class="about">
+                <h3>About</h3>
+
+                @foreach (var item in Model)
+                {
+                    <img src="@item.PhotoUrl" alt="" />
+                    <p>@item.Desctiption</p>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
