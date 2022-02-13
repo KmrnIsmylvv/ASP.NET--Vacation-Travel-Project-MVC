@@ -1,22 +1,11 @@
 ﻿@using Vacation_Travel_Site.Models.Classes
 @model List<Blog>
-@{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_TestLayout.cshtml";
-}
-
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
-
-    <link href="/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
-    <link href="/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="~/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/web2/css/style.css" rel='stylesheet' type='text/css' />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
@@ -26,48 +15,49 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
     <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+    <!--script-->
+    <script type="text/javascript" src="~/web2/js/move-top.js"></script>
+    <script type="text/javascript" src="~/web2/js/easing.js"></script>
+    <!--/script-->
+
+
 </head>
 <body>
-    <!---header---->
-    <div class="header">
-        <div class="container">
-
-
-            <div class="clearfix"></div>
-
-        </div>
-    </div>
-    <!--/header-->
 
     <div class="single">
         <div class="container">
             <div class="col-md-8 single-main">
-
-                @foreach (var blog in Model)
-                {
-                    <div class="single-grid">
-                        <img src="@blog.BlogImage" alt="" />
-                        <a href="/Blog/Detail/@blog.Id">@blog.Title</a>
-                        <p>@blog.Description</p>
-                    </div>
-                    <br /><br />
-                }
-
-
-
-
-
-
+                <div class="single-grid">
+                    @foreach (var item in Model)
+                    {
+                        <img src="@item.BlogImage" alt="" style="margin-bottom: 20px" />
+                        <h2>@item.Title</h2>
+                        <p>
+                            @item.Description
+                        </p>
+                    }
+                </div>
                 <ul class="comment-list">
-                    <h5 class="post-author_head">Written by <a href="#" title="Posts by admin" rel="author">admin</a></h5>
+
                     <li>
-                        <img src="/web2/images/avatar.png" class="img-responsive" alt="">
+                        <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
                         <div class="desc">
                             <p>View all posts by: <a href="#" title="Posts by admin" rel="author">admin</a></p>
                         </div>
                         <div class="clearfix"></div>
                     </li>
                 </ul>
+                <div class="content-form">
+                    <h3>Leave a comment</h3>
+                    <form>
+                        <input type="text" placeholder="Name" required />
+                        <input type="text" placeholder="Email" required />
+                        <textarea placeholder="Message"></textarea>
+                        <input type="submit" value="SEND" />
+                    </form>
+                </div>
             </div>
 
             <div class="col-md-4 side-content">
@@ -88,9 +78,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>
                     </ul>
                 </div>
+                <div class="clearfix"></div>
+
+
+                <div class="clearfix"></div>
             </div>
             <div class="clearfix"></div>
         </div>
     </div>
+
 </body>
 </html>
+<!---->
+<div class="footer">
+    <div class="container">
+        <p>Copyrights © 2015 Blog All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
+    </div>
+</div>
+
+
+
+
