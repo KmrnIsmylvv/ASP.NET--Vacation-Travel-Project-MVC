@@ -17,10 +17,13 @@ namespace Vacation_Travel_Site.Controllers
             return View(blogs);
         }
 
-        public ActionResult Detail(int id)
+        BlogComment blogComment = new BlogComment();
+        public ActionResult Detail(int? id)
         {
-            var blog = context.Blogs.Where(b => b.Id == id).ToList();
-            return View(blog);
+            blogComment.Blogs = context.Blogs.Where(b => b.Id == id).ToList();
+            blogComment.Comments = context.Comments.Where(c => c.BlogId == id); 
+            //var blog = context.Blogs.Where(b => b.Id == id).ToList();
+            return View(blogComment);
         }
     }
 }

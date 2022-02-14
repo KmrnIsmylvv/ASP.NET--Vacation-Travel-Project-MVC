@@ -14,6 +14,6 @@ namespace Vacation_Travel_Site.Models.Classes
         public string Email { get; set; }
         public string Comment { get; set; }
         public int BlogId { get; set; }
-        public Blog Blog { get; set; }
+        public virtual Blog Blog { get; set; }
     }
 }

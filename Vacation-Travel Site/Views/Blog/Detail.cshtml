@@ -1,5 +1,5 @@
 ﻿@using Vacation_Travel_Site.Models.Classes
-@model List<Blog>
+@model  BlogComment
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -30,7 +30,7 @@
         <div class="container">
             <div class="col-md-8 single-main">
                 <div class="single-grid">
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.Blogs)
                     {
                         <img src="@item.BlogImage" alt="" style="margin-bottom: 20px" />
                         <h2>@item.Title</h2>
@@ -39,16 +39,18 @@
                         </p>
                     }
                 </div>
-                <ul class="comment-list">
-
-                    <li>
-                        <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
-                        <div class="desc">
-                            <p>View all posts by: <a href="#" title="Posts by admin" rel="author">admin</a></p>
-                        </div>
-                        <div class="clearfix"></div>
-                    </li>
-                </ul>
+                @foreach (var item in Model.Comments)
+                {
+                    <ul class="comment-list">
+                        <li>
+                            <img src="~/web2/images/avatar.png" class="img-responsive" alt="">
+                            <div class="desc">
+                                <p>@item.Username: @item.Comment</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                }
                 <div class="content-form">
                     <h3>Leave a comment</h3>
                     <form>
