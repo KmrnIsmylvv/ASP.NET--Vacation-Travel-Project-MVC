@@ -1,4 +1,5 @@
-﻿
+﻿@using Vacation_Travel_Site.Models.Classes
+@model List<Blog>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -59,12 +60,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                     <div class="header_bottom_right_images">
 
-                        <div class="slider">
+                        <div class="slider" style=" width:650px; height:365px">
                             <ul class="rslides" id="slider1">
-                                <li><img src="~/web/images/img1.jpg" alt=""></li>
-                                <li><img src="~/web/images/img2.jpg" alt=""></li>
-                                <li><img src="~/web/images/img3.jpg" alt=""></li>
-                                <li><img src="~/web/images/img4.jpg" alt=""></li>
+                                @foreach (var item in Model)
+                                {
+                                    <li><img src="@item.BlogImage" alt="" style=" width:650px; height:365px"></li>
+                                }
                             </ul>
                         </div>
                     </div>
@@ -81,43 +82,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <h3>Welcome to our Travel Company!</h3>
                     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facil</p>
                 </div>
-                <div class="con-bot">
-                    <div class="left">
-                        <div class="bot-left">
-                            <img src="~/web/images/pic.jpg" alt="" />
-                        </div>
-                        <div class="left-text">
-                            <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-                            <span class="doller">$1024.99</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-                            <p><a href="#"><span class="read">Read More >></span></a></p>
-                        </div>
-                    </div>
-                    <div class="left">
-                        <div class="bot-left">
-                            <img src="~/web/images/pic1.jpg" alt="" />
-                        </div>
-                        <div class="left-text">
-                            <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-                            <span class="doller">$900.99</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-                            <p><a href="#"><span class="read">Read More >></span></a></p>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="bot-left">
-                            <img src="~/web/images/pic2.jpg" alt="" />
-                        </div>
-                        <div class="left-text">
 
-                            <h4>Lorem ipsum dolor sit amet, conte adipiscing elit dolor sit amet</h4>
-                            <span class="doller">$924.99</span>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismo</p>
-                            <p><a href="#"><span class="read">Read More >></span></a></p>
-                        </div>
-                    </div>
-                    <div class="clear"></div>
-                </div>
+                @Html.Action("PartialBlog", "Default")
+
                 <div class="grids">
                     <div class="box1">
                         <div class="padding">

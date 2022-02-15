@@ -1,0 +1,22 @@
+﻿@using Vacation_Travel_Site.Models.Classes
+@model List<Blog>
+
+<div class="con-bot">
+    @foreach (var item in Model)
+    {
+        <div class="left">
+            <div class="bot-left">
+                <img src="@item.BlogImage" alt="" />
+            </div>
+            <div class="left-text">
+                <h4>@item.Title</h4>
+                <span class="doller">@item.Date.ToString("dd.MM.yyyy")</span>
+                <p>@item.Description.Substring(0,50)</p>
+                <p><a href="/Blog/Detail/@item.Id"><span class="read">Read More</span></a></p>
+            </div>
+        </div>
+    }
+    
+  
+    <div class="clear"></div>
+</div>
