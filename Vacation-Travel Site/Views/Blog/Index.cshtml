@@ -1,5 +1,5 @@
 ﻿@using Vacation_Travel_Site.Models.Classes
-@model List<Blog>
+@model  BlogComment
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TestLayout.cshtml";
@@ -43,7 +43,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="container">
             <div class="col-md-8 single-main">
 
-                @foreach (var blog in Model)
+                @foreach (var blog in Model.Blogs)
                 {
                     <div class="single-grid">
                         <img src="@blog.BlogImage" alt="" />
@@ -73,12 +73,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="col-md-4 side-content">
                 <div class="recent">
                     <h3>RECENT POSTS</h3>
-                    <ul>
-                        <li><a href="#">Aliquam tincidunt mauris</a></li>
-                        <li><a href="#">Vestibulum auctor dapibus  lipsum</a></li>
-                        <li><a href="#">Nunc dignissim risus consecu</a></li>
-                        <li><a href="#">Cras ornare tristiqu</a></li>
-                    </ul>
+                    @foreach (var item in ViewBag.lastBlogs)
+                    {
+                        <ul>
+                            <li><a href="/Blog/Detail/@item.Id">@item.Title</a></li>
+                        </ul>
+                    }
+
                 </div>
                 <div class="comments">
                     <h3>RECENT COMMENTS</h3>

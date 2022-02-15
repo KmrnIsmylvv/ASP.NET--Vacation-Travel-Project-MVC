@@ -10,14 +10,21 @@ namespace Vacation_Travel_Site.Controllers
     public class BlogController : Controller
     {
         Context context = new Context();
+        BlogComment blogComment = new BlogComment();
         // GET: Blog
         public ActionResult Index()
         {
-            var blogs = context.Blogs.ToList();
-            return View(blogs);
+            //var blogs = context.Blogs.ToList();
+
+            blogComment.Blogs = context.Blogs.ToList();
+
+            var lastBlogs = blogComment.Blogs.OrderByDescending(b=>b.Id).Take(3).ToList();
+            ViewBag.lastBlogs = lastBlogs;
+
+            return View(blogComment);
         }
 
-        BlogComment blogComment = new BlogComment();
+        
         public ActionResult Detail(int? id)
         {
             blogComment.Blogs = context.Blogs.Where(b => b.Id == id).ToList();
