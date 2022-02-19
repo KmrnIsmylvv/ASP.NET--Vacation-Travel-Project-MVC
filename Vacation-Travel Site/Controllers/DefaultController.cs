@@ -29,6 +29,12 @@ namespace Vacation_Travel_Site.Controllers
             return PartialView(blogs);
         }
 
+        public PartialViewResult PartialTopTenBlog()
+        {
+            var blogs = context.Blogs.ToList();
+            return PartialView(blogs);
+        }
+
         //public PartialViewResult RightPartialBlog()
         //{
         //    var blogs = context.Blogs.Where(b=>b.Id==1)
