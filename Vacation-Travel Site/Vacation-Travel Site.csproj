@@ -246,6 +246,7 @@
     <Content Include="Views\Default\PartialBlog.cshtml" />
     <Content Include="Views\Default\RightPartialBlog.cshtml" />
     <Content Include="Views\Default\PartialTopTenBlog.cshtml" />
+    <Content Include="Views\Default\PartialBestBlogs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

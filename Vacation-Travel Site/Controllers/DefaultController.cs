@@ -13,7 +13,7 @@ namespace Vacation_Travel_Site.Controllers
         // GET: Default
         public ActionResult Index()
         {
-            var blogs = context.Blogs.ToList();
+            var blogs = context.Blogs.Take(10).ToList();
             return View(blogs);
         }
 
@@ -32,6 +32,12 @@ namespace Vacation_Travel_Site.Controllers
         public PartialViewResult PartialTopTenBlog()
         {
             var blogs = context.Blogs.ToList();
+            return PartialView(blogs);
+        }
+
+        public PartialViewResult PartialBestBlogs()
+        {
+            var blogs = context.Blogs.Take(6).ToList();
             return PartialView(blogs);
         }
 
