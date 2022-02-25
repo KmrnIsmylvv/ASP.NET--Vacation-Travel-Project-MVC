@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -247,6 +248,9 @@
     <Content Include="Views\Default\RightPartialBlog.cshtml" />
     <Content Include="Views\Default\PartialTopTenBlog.cshtml" />
     <Content Include="Views\Default\PartialBestBlogs.cshtml" />
+    <Content Include="Views\Default\PartialRightBestBlogs.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

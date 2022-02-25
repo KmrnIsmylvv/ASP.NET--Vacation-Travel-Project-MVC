@@ -37,7 +37,13 @@ namespace Vacation_Travel_Site.Controllers
 
         public PartialViewResult PartialBestBlogs()
         {
-            var blogs = context.Blogs.Take(6).ToList();
+            var blogs = context.Blogs.Take(3).ToList();
+            return PartialView(blogs);
+        }
+
+        public PartialViewResult PartialRightBestBlogs()
+        {
+            var blogs = context.Blogs.Take(3).OrderByDescending(b => b.Id).ToList();
             return PartialView(blogs);
         }
 
