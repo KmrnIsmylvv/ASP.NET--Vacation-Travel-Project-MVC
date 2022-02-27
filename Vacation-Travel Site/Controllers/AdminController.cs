@@ -18,5 +18,19 @@ namespace Vacation_Travel_Site.Controllers
 
             return View(blogs);
         }
+
+        [HttpGet]
+        public ActionResult NewBlog()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult NewBlog(Blog blog)
+        {
+            context.Blogs.Add(blog);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
