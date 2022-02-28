@@ -32,5 +32,36 @@ namespace Vacation_Travel_Site.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult DeleteBlog(int id)
+        {
+            var blog = context.Blogs.Find(id);
+            context.Blogs.Remove(blog);
+            context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult UpdateBlog(int id)
+        {
+            var blog = context.Blogs.Find(id);
+
+            return View("UpdateBlog", blog);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateBlog(Blog currentBlog)
+        {
+            var blog = context.Blogs.Find(currentBlog.Id);
+            blog.Title = currentBlog.Title;
+            blog.Description = currentBlog.Description;
+            blog.BlogImage = currentBlog.BlogImage;
+            blog.Date = currentBlog.Date;
+
+            context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }
