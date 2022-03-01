@@ -32,5 +32,20 @@ namespace Vacation_Travel_Site.Controllers
             //var blog = context.Blogs.Where(b => b.Id == id).ToList();
             return View(blogComment);
         }
+
+        [HttpGet]
+        public ActionResult CreateComment()
+        {
+            return PartialView();
+        }
+
+        [HttpPost]
+        public PartialViewResult CreateComment(Comments comment)
+        {
+            context.Comments.Add(comment);
+            context.SaveChanges();
+
+            return PartialView();
+        }
     }
 }
