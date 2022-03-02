@@ -34,8 +34,9 @@ namespace Vacation_Travel_Site.Controllers
         }
 
         [HttpGet]
-        public ActionResult CreateComment()
+        public ActionResult CreateComment(int id)
         {
+            ViewBag.blogId = id;
             return PartialView();
         }
 

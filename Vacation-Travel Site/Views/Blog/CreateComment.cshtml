@@ -1,9 +1,10 @@
 ﻿<div class="content-form">
     <h3>Leave a comment</h3>
-    <form>
-        <input type="text" placeholder="Name" required />
-        <input type="text" placeholder="Email" required />
-        <textarea placeholder="Message"></textarea>
+    <form method="post">
+        <input type="hidden" name="blogId" value="@ViewBag.blogId" required />
+        <input type="text" placeholder="Name" name="Username" required />
+        <input type="text" placeholder="Email" name="Email" required />
+        <textarea placeholder="Message" name="Comment"></textarea>
         <input type="submit" value="SEND" />
     </form>
 </div>
