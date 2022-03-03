@@ -253,6 +253,7 @@
     <Content Include="Views\Admin\NewBlog.cshtml" />
     <Content Include="Views\Admin\UpdateBlog.cshtml" />
     <Content Include="Views\Blog\CreateComment.cshtml" />
+    <Content Include="Views\Admin\CommentList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
