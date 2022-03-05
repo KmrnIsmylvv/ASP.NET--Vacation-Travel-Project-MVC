@@ -12,6 +12,7 @@ namespace Vacation_Travel_Site.Controllers
         Context context = new Context();
 
         // GET: Admin
+        [Authorize]
         public ActionResult Index()
         {
             var blogs = context.Blogs.ToList();
