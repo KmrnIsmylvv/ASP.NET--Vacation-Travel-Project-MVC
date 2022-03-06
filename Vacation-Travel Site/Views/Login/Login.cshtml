@@ -26,11 +26,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         <div class="design-w3l">
             <div class="mail-form-agile">
-                <form action="#" method="post">
-                    <input type="text" name="name" placeholder="User Name  or  email..." required="" />
-                    <input type="password" name="password" class="padding" placeholder="Password" required="" />
+                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                {
+                    <input type="text" name="Username" placeholder="User Name  or  email..." required="" />
+                    <input type="password" name="Password" class="padding" placeholder="Password" required="" />
                     <input type="submit" value="login">
-                </form>
+                }
             </div>
             <div class="clear"> </div>
         </div>
