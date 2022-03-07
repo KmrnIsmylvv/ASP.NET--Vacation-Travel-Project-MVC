@@ -33,5 +33,11 @@ namespace Vacation_Travel_Site.Controllers
                 return View();
             }
         }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login", "Login");
+        }
     }
 }
